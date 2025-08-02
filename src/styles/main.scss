@@ -1,0 +1,17 @@
+:root {
+    --royal-blue-web-color: hsla(219, 89%, 53%, 1);
+    --royal-blue-web-color-2: hsla(219, 75%, 50%, 1);
+    --tang-blue: hsla(219, 67%, 47%, 1);
+    --kelly-green: hsla(99, 60%, 43%, 1);
+    --battleship-gray: hsla(0, 0%, 60%, 1);
+    --gradient-blue: linear-gradient(to right, var(--royal-blue-web-color), var(--tang-blue));
+    --gradient-green: linear-gradient(to right, var(--kelly-green), var(--kelly-green));
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
