@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Technical Officer Dashboard</title>
+</head>
+
+<body>
+    <header>
+        <div>
+            <h2>Technical Officer</h2>
+            <p>Repair & Maintenance Operations</p>
+        </div>
+        <div>
+            <strong>David Brown</strong><br />
+            <small>Technical Officer</small><br />
+            <button onclick="logout()">Logout</button>
+        </div>
+    </header>
+
+    <section class="stats">
+        <div class="stat-box">
+            <p>Assigned Tickets</p>
+            <h3>6</h3>
+        </div>
+        <div class="stat-box">
+            <p>Parts Requests</p>
+            <h3>3</h3>
+        </div>
+        <div class="stat-box">
+            <p>In Progress</p>
+            <h3>4</h3>
+        </div>
+        <div class="stat-box">
+            <p>Completed Today</p>
+            <h3>2</h3>
+        </div>
+    </section>
+
+    <section class="main">
+        <div class="tickets">
+            <h3>My Assigned Tickets</h3>
+            <div class="ticket-item high-priority">
+                <strong>Ticket #MT-2024-045</strong> <span style="color:red;">(High Priority)</span><br />
+                Vehicle: Truck LKA-1234<br />
+                Issue: Engine overheating<br />
+                Assigned: 2 hours ago
+                <div class="ticket-actions">
+                    <button onclick="openModal('requestParts', 'MT-2024-045')">Request Parts</button>
+                    <button onclick="openModal('updateProgress', 'MT-2024-045')">Update Progress</button>
+                </div>
+            </div>
+            <div class="ticket-item">
+                <strong>Ticket #MT-2024-044</strong><br />
+                Machine: Forklift FL-007<br />
+                Issue: Hydraulic leak<br />
+                Assigned: 5 hours ago
+                <div class="ticket-actions">
+                    <button onclick="openModal('markComplete', 'MT-2024-044')">Mark Complete</button>
+                    <button onclick="openModal('submitCosts', 'MT-2024-044')">Submit Costs</button>
+                </div>
+            </div>
+            <div class="ticket-item">
+                <strong>Ticket #MT-2024-043</strong><br />
+                Vehicle: Van LKB-5678<br />
+                Issue: Brake pad replacement<br />
+                Assigned: 1 day ago
+                <div class="ticket-actions">
+                    <button onclick="openModal('checkPartsStatus', 'MT-2024-043')">Check Parts Status</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="quick-actions">
+            <h3>Quick Actions</h3>
+            <button onclick="openModal('requestSpareParts')">Request Spare Parts</button>
+            <button onclick="openModal('submitRepairReport')">Submit Repair Report</button>
+            <button onclick="openModal('claimWarranty')">Claim Warranty</button>
+            <button onclick="openModal('reportBreakdown')">Report Breakdown</button>
+
+            <div class="parts-availability">
+                <h4>Spare Parts Availability</h4>
+                <div class="parts-list">
+                    <p>Engine Oil Filter <span>45 Available</span></p>
+                    <p>Brake Pads <span class="low-stock">3 Low Stock</span></p>
+                    <p>Hydraulic Fluid <span>28 Available</span></p>
+                    <p>Air Filters <span>12 Available</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-timeline">
+        <h3>Service Timeline</h3>
+        <p class="service-item today">Today's Schedule: 4 active repairs</p>
+        <p class="service-item week">This Week: 12 scheduled services</p>
+        <p class="service-item overdue">Overdue: 1 ticket past deadline</p>
+    </section>
+
+    <section class="parts-usage">
+        <h3>Parts Usage & Cost Tracking</h3>
+        <div class="usage-item">
+            <strong>Ticket #MT-2024-042</strong> - Oil Filter, Brake Pads
+            <button onclick="openModal('updatePartsUsage', 'MT-2024-042')">Update</button>
+        </div>
+        <div class="usage-item">
+            <strong>Ticket #MT-2024-041</strong> - Hydraulic Fluid
+            <button onclick="openModal('submitPartsCost', 'MT-2024-041')">Submit Cost</button>
+        </div>
+
+        <h3>Warranty Claims</h3>
+        <div class="usage-item">
+            Eligible for Warranty - Engine Component (Truck LKA-1234)
+            <button onclick="openModal('claimWarranty', 'Truck LKA-1234')">Claim Warranty</button>
+        </div>
+        <div class="usage-item">
+            Warranty Processing - Claim #WC-2024-005 (Under review)
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" tabindex="-1">
+        <div class="modal-content" id="modalContent"></div>
+    </div>
+</body>
+
+</html>
