@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Supervisor Dashboard</title>
+</head>
+
+<body>
+    <header>
+        <div>
+            <h2>Supervisor Dashboard</h2>
+            <p>Team Coordination & Task Management</p>
+        </div>
+        <div>
+            <strong>Sahan Sandaruwan</strong><br />
+            <small>Supervisor</small><br />
+            <button onclick="logout()">Logout</button>
+        </div>
+    </header>
+
+    <section class="stats">
+        <div class="stat-box">
+            <p>Daily Checks</p>
+            <h3>12</h3>
+        </div>
+        <div class="stat-box">
+            <p>Active Tickets</p>
+            <h3>8</h3>
+        </div>
+        <div class="stat-box">
+            <p>Budget Approvals</p>
+            <h3>5</h3>
+        </div>
+        <div class="stat-box">
+            <p>Team Members</p>
+            <h3>15</h3>
+        </div>
+    </section>
+
+    <section class="main">
+        <div class="approvals">
+            <h3>Pending Approvals</h3>
+            <div class="approval-item">
+                <strong>Daily Vehicle Check</strong><br />
+                Truck LKA-1234 – Gehiru Damindu
+                <div class="approval-buttons">
+                    <button onclick="openModal('vehicleCheck')">View</button>
+                    <button onclick="openModal('approveVehicle')">Approve</button>
+                </div>
+            </div>
+            <div class="approval-item">
+                <strong>Spare Parts Order</strong><br />
+                Order #ORD-2025-003 – Rs.22,500
+                <div class="approval-buttons">
+                    <button onclick="openModal('spareParts')">Details</button>
+                    <button onclick="openModal('approveSpareParts')">Approve</button>
+                </div>
+            </div>
+            <div class="approval-item">
+                <strong>Repair Budget Approval</strong><br />
+                Ticket #MT-2024-046 – Forklift FL-008
+                <div class="approval-buttons">
+                    <button onclick="openModal('budgetApproval')">Review</button>
+                    <button onclick="openModal('approveBudget')">Approve</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="management">
+            <h3>Team Management</h3>
+            <button onclick="openModal('assignFaultTickets')">Assign Fault Tickets</button>
+            <button onclick="openModal('monitorRepair')">Monitor Repair Progress</button>
+            <button onclick="openModal('updateAsset')">Update Asset Status</button>
+            <button onclick="openModal('closeTickets')">Close Completed Tickets</button>
+        </div>
+    </section>
+
+    <section class="fault-tickets">
+        <h3>Fault Ticket Assignment</h3>
+        <div class="ticket">
+            <strong>Ticket #MT-2024-047</strong><br />
+            Truck LKC-9999 – Brake system issue
+            <button onclick="openModal('assignTechnician')">Assign Technician</button>
+        </div>
+    </section>
+
+    <div id="modal" class="modal">
+        <div class="modal-content" id="modalContent"></div>
+    </div>
+</body>
+
+</html>
