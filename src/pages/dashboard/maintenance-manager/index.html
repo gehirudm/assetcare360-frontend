@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Maintenance Management Dashboard</title>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div>
+      <h2>Maintenance Management</h2>
+      <p>Service Operations & Cost Control</p>
+    </div>
+    <div>
+      <strong>Gehiru Damindu</strong><br />
+      <small>Maintenance Manager</small><br />
+      <button onclick="logout()">Logout</button>
+    </div>
+  </header>
+
+  <!-- Stats -->
+  <section class="stats" aria-label="Maintenance summary statistics">
+    <div class="stat-box" tabindex="0" aria-label="34 active tickets">Active Tickets<br /><h3>34</h3></div>
+    <div class="stat-box" tabindex="0" aria-label="422,000 rupees pending approvals">Pending Approvals<br /><h3>Rs.422,000</h3></div>
+    <div class="stat-box" tabindex="0" aria-label="7 overdue services">Overdue Services<br /><h3>7</h3></div>
+    <div class="stat-box" tabindex="0" aria-label="1,350,000 rupees monthly costs">Monthly Costs<br /><h3>Rs.1,350,000</h3></div>
+  </section>
+
+  <!-- Main Layout -->
+  <section class="main" aria-label="Main dashboard area">
+    <!-- Fault Tickets -->
+    <div class="tickets" aria-label="Fault tickets and service records">
+      <h3>Fault Tickets & Service Records</h3>
+
+      <article class="ticket-item high-priority" tabindex="0" aria-live="polite" aria-atomic="true" aria-relevant="additions">
+        <strong>Ticket #MT-2024-045</strong><br />
+        Truck LKA-1234 | Engine Overheating<br />
+        Assigned: Gehiru Damindu (Technical Officer)<br />
+        Est. Cost: Rs.25,000 | Created: 2 hours ago<br />
+        <button onclick="openModal('approveCost', 'Ticket #MT-2024-045', 25000)">Approve Cost</button>
+        <button onclick="openModal('viewDetails', 'Ticket #MT-2024-045', 'Truck LKA-1234 - Engine Overheating, Assigned to Gehiru Damindu, Estimated Rs.25,000')">View Details</button>
+      </article>
+
+      <article class="ticket-item medium-priority" tabindex="0" aria-live="polite" aria-atomic="true" aria-relevant="additions">
+        <strong>Ticket #MT-2024-044</strong><br />
+        Forklift FL-007 | Hydraulic Leak<br />
+        Assigned: Senash Adeesha (Technical Officer)<br />
+        Est. Cost: Rs.18,000 | Created: 5 hours ago<br />
+        <button onclick="openModal('approveCost', 'Ticket #MT-2024-044', 18000)">Approve Cost</button>
+        <button onclick="openModal('viewDetails', 'Ticket #MT-2024-044', 'Forklift FL-007 - Hydraulic Leak, Assigned to Senash Adeesha, Estimated Rs.18,000')">View Details</button>
+      </article>
+
+      <article class="ticket-item completed" tabindex="0" aria-live="polite" aria-atomic="true" aria-relevant="additions">
+        <strong>Service #SV-2024-023</strong><br />
+        Van LKB-5678 | Scheduled Maintenance<br />
+        Completed by: Ravindu Lakshan (Supervisor)<br />
+        Final Cost: Rs.3,000 | Completed: 1 day ago<br />
+        <button onclick="openModal('viewReport', 'Service #SV-2024-023')">View Report</button>
+      </article>
+    </div>
+
+    <!-- Quick Actions and Alerts -->
+    <div class="quick-actions" aria-label="Quick action buttons and alerts">
+      <h3>Quick Actions</h3>
+      <button onclick="openModal('inputServiceReport')">Input Service Report</button>
+      <button onclick="openModal('scheduleMaintenance')">Schedule Maintenance</button>
+      <button onclick="openModal('generateCostAnalysis')">Generate Cost Analysis</button>
+
+      <div class="alerts" aria-live="polite" aria-atomic="true" aria-relevant="additions">
+        <h4>Critical Alerts & Updates</h4>
+        <div class="news-feed" tabindex="0" aria-label="Critical alerts and updates news feed">
+          <div class="news-item">
+            <div>Breakdown Alert: Truck LKA-1234 - Engine Failure</div>
+            <div class="news-category critical" aria-label="Critical alert">Critical</div>
+            <div class="news-time">5m ago</div>
+          </div>
+          <div class="news-item">
+            <div>3 Cost Approvals Pending Review</div>
+            <div class="news-category pending" aria-label="Pending alert">Pending</div>
+            <div class="news-time">1h ago</div>
+          </div>
+          <div class="news-item">
+            <div>Insurance Renewals: 3 Due, 12 Scheduled Services</div>
+            <div class="news-category timeline" aria-label="Timeline update">Timeline</div>
+            <div class="news-time">1d ago</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Reports -->
+  <section class="service-reports" aria-label="Recent service reports">
+    <h3>Recent Service Reports</h3>
+    <div class="service-row">
+      <strong>Truck LKB-9876 – Oil Change</strong>
+      <button onclick="openModal('viewReport', 'Truck LKB-9876 – Oil Change')">View</button>
+    </div>
+    <div class="service-row">
+      <strong>Forklift FL-003 – Brake Service</strong>
+      <button onclick="openModal('viewReport', 'Forklift FL-003 – Brake Service')">View</button>
+    </div>
+  </section>
+
+  <!-- Modal Overlay -->
+  <div id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+    <div id="modal">
+      <button class="close-btn" aria-label="Close modal" onclick="closeModal()">&times;</button>
+      <h3 id="modal-title"></h3>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+</body>
+</html>
