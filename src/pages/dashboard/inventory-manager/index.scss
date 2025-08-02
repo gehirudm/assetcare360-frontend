@@ -1,0 +1,424 @@
+:root {
+    --royal-blue-web-color: hsla(219, 89%, 53%, 1);
+    --royal-blue-web-color-2: hsla(219, 75%, 50%, 1);
+    --tang-blue: hsla(219, 67%, 47%, 1);
+    --kelly-green: hsla(99, 60%, 43%, 1);
+    --battleship-gray: hsla(0, 0%, 60%, 1);
+    --gradient-blue: linear-gradient(to right, var(--royal-blue-web-color), var(--tang-blue));
+    --gradient-green: linear-gradient(to right, var(--kelly-green), var(--kelly-green));
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f6f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background: var(--royal-blue-web-color);
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h2 {
+    margin: 0;
+}
+
+header p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+header div:last-child {
+    text-align: right;
+}
+
+header strong {
+    font-size: 1.1rem;
+}
+
+header small {
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+header button {
+    background: white;
+    color: var(--royal-blue-web-color);
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease;
+    margin-top: 0.3rem;
+}
+
+header button:hover {
+    background: var(--royal-blue-web-color-2);
+    color: white;
+}
+
+.stats {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem 2rem;
+}
+
+.stat-box {
+    background: var(--gradient-blue);
+    color: white;
+    padding: 1rem;
+    border-radius: 12px;
+    flex: 1;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease;
+    cursor: default;
+    user-select: none;
+}
+
+.stat-box:hover {
+    transform: translateY(-5px);
+}
+
+.stat-box p {
+    margin: 0 0 0.3rem 0;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.stat-box h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.main {
+    display: flex;
+    padding: 0 2rem 2rem 2rem;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.catalog,
+.quick-actions {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    flex: 1 1 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.catalog:hover,
+.quick-actions:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.catalog h3,
+.quick-actions h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: var(--royal-blue-web-color);
+}
+
+.catalog input[type="text"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--battleship-gray);
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.catalog button {
+    margin-right: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--royal-blue-web-color-2);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background 0.3s ease;
+}
+
+.catalog button:hover {
+    background: var(--tang-blue);
+}
+
+.catalog-item {
+    border: 1px solid var(--battleship-gray);
+    margin: 1rem 0;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    background: linear-gradient(to right, white, #f1f1f1);
+    border-left: 6px solid var(--kelly-green);
+    transition: transform 0.3s;
+    cursor: pointer;
+    user-select: none;
+}
+
+.catalog-item:hover {
+    transform: scale(1.02);
+}
+
+.catalog-item.low-stock {
+    border-left-color: var(--tang-blue);
+    background: #fef0f0;
+}
+
+.quick-actions button {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.75rem;
+    background: var(--gradient-green);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    font-size: 1rem;
+    user-select: none;
+}
+
+.quick-actions button:hover {
+    transform: scale(1.03);
+}
+
+.stock-alerts {
+    margin-top: 2rem;
+    border-top: 2px solid var(--royal-blue-web-color);
+    padding-top: 1rem;
+}
+
+.news-feed {
+    max-height: 220px;
+    overflow-y: auto;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #222;
+}
+
+.news-item {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    cursor: default;
+    user-select: none;
+}
+
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.news-category {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    color: white;
+    white-space: nowrap;
+    user-select: none;
+}
+
+.critical {
+    background-color: #d93025;
+}
+
+.reorder {
+    background-color: #f9ab00;
+    color: black;
+}
+
+.warranty {
+    background-color: #1a73e8;
+}
+
+.news-time {
+    font-size: 0.75rem;
+    color: var(--battleship-gray);
+    white-space: nowrap;
+    min-width: 70px;
+    text-align: right;
+    font-style: italic;
+    user-select: none;
+}
+
+.pending-orders {
+    margin: 2rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+}
+
+.pending-orders h3 {
+    margin-top: 0;
+    color: var(--royal-blue-web-color);
+}
+
+.order {
+    border-top: 1px solid var(--battleship-gray);
+    padding: 1rem 0;
+    cursor: default;
+    user-select: none;
+}
+
+.order p {
+    margin: 0 0 0.5rem 0;
+}
+
+.order button {
+    margin-left: 1rem;
+    background: var(--kelly-green);
+    color: white;
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background 0.3s ease;
+    user-select: none;
+}
+
+.order button:hover {
+    background: var(--tang-blue);
+}
+
+/* Details Panel hidden by default */
+#details-panel {
+    display: none;
+    background: #fff;
+    margin: 2rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+}
+
+#details-panel button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: var(--royal-blue-web-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+#details-panel button:hover {
+    background: var(--tang-blue);
+}
+
+/* ==== Modal form like Supervisor Dashboard ==== */
+#form-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+#form-modal.active {
+    display: flex;
+}
+
+#form-modal .modal-content {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 400px;
+    max-width: 95%;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+#form-modal .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: var(--royal-blue-web-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 26px;
+    text-align: center;
+    font-size: 18px;
+}
+
+#form-modal .close-btn:hover {
+    background: var(--tang-blue);
+}
+
+#form-modal form {
+    font-size: 14px;
+}
+
+#form-modal form label {
+    font-weight: 600;
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+#form-modal form input,
+#form-modal form select,
+#form-modal form textarea {
+    padding: 8px;
+    border: 1px solid var(--battleship-gray);
+    border-radius: 6px;
+    font-size: 14px;
+    font-family: inherit;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#form-modal form textarea {
+    resize: vertical;
+}
+
+#form-modal form button {
+    margin-top: 1.5rem;
+    background: var(--royal-blue-web-color);
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background 0.3s ease;
+    width: 100%;
+}
+
+#form-modal form button:hover {
+    background: var(--tang-blue);
+}

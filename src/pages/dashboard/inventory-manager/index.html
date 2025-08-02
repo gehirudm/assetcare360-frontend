@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Inventory Management</title>
+</head>
+
+<body>
+    @@include('./header.html')
+
+    <section class="stats">
+        <div class="stat-box" title="Total Parts: 1,247">
+            <p>Total Parts</p>
+            <h3>1,247</h3>
+        </div>
+        <div class="stat-box" title="Low Stock: 23">
+            <p>Low Stock</p>
+            <h3>23</h3>
+        </div>
+        <div class="stat-box" title="Orders Pending: 8">
+            <p>Orders Pending</p>
+            <h3>8</h3>
+        </div>
+        <div class="stat-box" title="Monthly Usage: Rs.724,397">
+            <p>Monthly Usage</p>
+            <h3>Rs.724,397</h3>
+        </div>
+    </section>
+
+    <section class="main">
+        <div class="catalog">
+            <h3>Spare Parts Catalog</h3>
+            <input type="text" placeholder="Search" />
+            <button title="Filter catalog">Filter</button>
+            <button id="btnAddItem" title="Add new spare part">Add Item</button>
+
+            <div class="catalog-item"
+                title="Engine Oil Filter - Type A | Part #: EOF-001-A | Compatible: Trucks, Heavy Machinery | Qty: 45 | Min: 10">
+                <strong>Engine Oil Filter - Type A</strong><br />Part #: EOF-001-A<br />Compatible: Trucks, Heavy
+                Machinery<br />Qty: 45 | Min: 10
+            </div>
+
+            <div class="catalog-item low-stock"
+                title="Brake Pads - Heavy Duty | Part #: BP-HD-002 | Compatible: Delivery Trucks | Qty: 3 | Min: 8">
+                <strong>Brake Pads - Heavy Duty</strong> <span style="color:red;">(Low Stock)</span><br />Part #:
+                BP-HD-002<br />Compatible: Delivery Trucks<br />Qty: 3 | Min: 8
+            </div>
+
+            <div class="catalog-item"
+                title="Hydraulic Fluid - 5L | Part #: HF-5L-003 | Compatible: Forklifts, Cranes | Qty: 28 | Min: 15">
+                <strong>Hydraulic Fluid - 5L</strong><br />Part #: HF-5L-003<br />Compatible: Forklifts,
+                Cranes<br />Qty: 28 | Min: 15
+            </div>
+        </div>
+
+        <div class="quick-actions">
+            <h3>Quick Actions</h3>
+            <button data-form="addItem" id="btnAddItem2">Add New Item</button>
+            <button data-form="approveOrders" id="btnApproveOrders">Approve Orders</button>
+            <button data-form="usageReport" id="btnUsageReport">Usage Reports</button>
+            <button title="Export Catalog">Export Catalog</button>
+
+            <div class="stock-alerts">
+                <h4>Stock Alerts</h4>
+                <div class="news-feed">
+                    <div class="news-item" title="Critical Low Stock: Brake Pads - Heavy Duty (3 left)">
+                        <div>Critical Low Stock: Brake Pads - Heavy Duty (3 left)</div>
+                        <div class="news-category critical">Critical</div>
+                        <div class="news-time">2m ago</div>
+                    </div>
+                    <div class="news-item" title="Reorder Soon: Air Filters (12 left)">
+                        <div>Reorder Soon: Air Filters (12 left)</div>
+                        <div class="news-category reorder">Reorder</div>
+                        <div class="news-time">1h ago</div>
+                    </div>
+                    <div class="news-item" title="Warranty Expiring: Engine Components (30 days)">
+                        <div>Warranty Expiring: Engine Components (30 days)</div>
+                        <div class="news-category warranty">Warranty</div>
+                        <div class="news-time">3d ago</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pending-orders">
+        <h3>Pending Approval Orders</h3>
+        <div class="order"
+            title="Order #ORD-2024-001 | Requested by: Technical Officer - Sahan Sandaruwan | Items: Engine Oil Filter (5), Brake Pads (2)">
+            <p><strong>Order #ORD-2024-001</strong><br />Requested by: Technical Officer - Sahan Sandaruwan<br />Items:
+                Engine Oil Filter (5), Brake Pads (2)</p>
+            <button>View Details</button>
+            <button>Approve</button>
+        </div>
+        <div class="order"
+            title="Order #ORD-2024-002 | Requested by: Supervisor - Ravindu Lakshan | Items: Hydraulic Fluid (3), Air Filter (4)">
+            <p><strong>Order #ORD-2024-002</strong><br />Requested by: Supervisor - Ravindu Lakshan<br />Items:
+                Hydraulic Fluid (3), Air Filter (4)</p>
+            <button>View Details</button>
+            <button>Approve</button>
+        </div>
+    </section>
+
+    <!-- Modal for forms -->
+    <section id="form-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+        <div class="modal-content" tabindex="0">
+            <button class="close-btn" aria-label="Close form">&times;</button>
+            <div id="form-modal-content"></div>
+        </div>
+    </section>
+</body>
+
+</html>
