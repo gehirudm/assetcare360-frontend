@@ -1,4 +1,44 @@
-### 📦 Project Structure
+### **AssetCare360 — Intelligent Asset Maintenance & Workflow Management System**
+
+AssetCare360 is a full-featured, role-based platform designed to automate maintenance, manage breakdowns, and streamline inventory and service workflows for vehicle and machinery assets.
+Built for scalability and real-time coordination, it centralizes reporting, repairs, part tracking, and asset lifecycle monitoring—empowering operators, technicians, supervisors, and admins with the tools they need.
+
+---
+
+### **Core Features**
+
+* 📋 Asset registration and disposal tracking
+* 🔧 Automated maintenance & fault ticketing workflows
+* 🧾 Spare parts inventory and usage management
+* 🚗 Fuel and mileage logging for vehicles
+* 🔒 Role-based access and system-wide configuration
+* 📱 Mobile-responsive UI with contextual guidance
+* 🔐 Secure data handling and audit logging
+* ☁️ Real-time monitoring and notification system
+
+---
+
+### **Target Users**
+
+* System Admins
+* Inventory Managers
+* Supervisors & Maintenance Managers
+* Technical Officers
+* Machinery Operators
+* Drivers
+* Auction Officers
+
+---
+
+### Tech Stack
+
+**Frontend :** HTML, SASS, JS
+
+**Backend :** Java
+
+**Build Tool :** Gulp
+
+### Frontend Project Structure
 
 ```
 project-root/
