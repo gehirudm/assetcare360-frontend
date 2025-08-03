@@ -1,0 +1,84 @@
+.status-badge {
+    font-size: 0.75rem;
+    border-radius: 1rem;
+    padding: 0.25rem 0.75rem;
+}
+
+.status-operational {
+    background: var(--kelly-green);
+    color: #fff;
+}
+
+.status-completed {
+    background: var(--royal-blue-web-color);
+    color: #fff;
+}
+
+.status-pending {
+    background: #f59e0b; /* No matching variable, keep as is */
+    color: #fff;
+}
+
+.progress-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: conic-gradient(var(--royal-blue-web-color) 75%, #e5e7eb 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progress-circle-inner {
+    width: 70%;
+    height: 70%;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    background: rgb(170, 234, 250); /* No matching variable, keep as is */
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* Custom styles for quick action buttons */
+.quick-action-btn {
+    transition: all 0.2s ease;
+}
+
+.quick-action-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.report-btn {
+    background-color: #fee2e2; /* No matching variable, keep as is */
+    color: #b91c1c;
+}
+
+.check-btn {
+    background-color: #dbeafe; /* No matching variable, keep as is */
+    color: var(--royal-blue-web-color-2);
+}
+
+.fuel-btn {
+    background-color: #dcfce7; /* No matching variable, keep as is */
+    color: var(--kelly-green);
+}
+
+.ticket-btn {
+    background-color: #fef9c3; /* No matching variable, keep as is */
+    color: #a16207;
+}

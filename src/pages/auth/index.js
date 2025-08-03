@@ -1,45 +1,44 @@
-import { getToday } from "../../../lib/utils";
-
-console.log(getToday);
-
 // Handle form submission with login API (employeeId, email, password)
-document.getElementById('loginForm').addEventListener('submit', async function (e) {
+async function handleLogin (e) {
     e.preventDefault();
     const loginBtn = document.querySelector('.login-btn');
-    const btnText = document.querySelector('.btn-text');
     loginBtn.classList.add('loading');
-    btnText.textContent = 'Authenticating...';
+    loginBtn.textContent = 'Authenticating...';
 
-    const employeeId = document.getElementById('employeeId').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+    const email = document.getElementById('email').value.trim().toLowerCase();
 
-    try {
-        const response = await fetch('/api/auth/login', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ employeeId, email, password })
-        });
-        if (!response.ok) {
-            let msg = 'Login failed. Please try again.';
-            if (response.status === 400) msg = 'Missing required fields.';
-            if (response.status === 401) msg = 'Invalid credentials or email mismatch.';
-            throw new Error(msg);
-        }
-        const data = await response.json();
-        btnText.textContent = 'Success!';
-        setTimeout(() => {
-            window.location.href = '/dashboard';
-        }, 1000);
-    } catch (err) {
-        btnText.textContent = 'Login Failed';
-        alert(err.message || 'Login failed. Please try again.');
-        setTimeout(() => {
-            btnText.textContent = 'Login';
-            loginBtn.classList.remove('loading');
-        }, 1500);
+    let redirectUrl = '';
+    switch (email) {
+        case 'driver@email.com':
+            redirectUrl = '/dashboard/driver.html';
+            break;
+        case 'inventory-managr@email.com':
+            redirectUrl = '/dashboard/inventory-manager.html';
+            break;
+        case 'auction-officer@email.com':
+            redirectUrl = '/dashboard/auction-officer.html';
+            break;
+        case 'maintenance-manager@email.com':
+            redirectUrl = '/dashboard/maintenance-manager.html';
+            break;
+        case 'supervisor@email.com':
+            redirectUrl = '/dashboard/supervisor.html';
+            break;
+        case 'technician@email.com':
+            redirectUrl = '/dashboard/technician.html';
+            break;
+        default:
+            loginBtn.textContent = 'Login Failed';
+            setTimeout(() => {
+                loginBtn.textContent = 'Login';
+                loginBtn.classList.remove('loading');
+            }, 1500);
+            return;
     }
-});
+    setTimeout(() => {
+        window.location.href = redirectUrl;
+    }, 800);
+}
 
 
 
@@ -79,3 +78,5 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+window.handleLogin = handleLogin;

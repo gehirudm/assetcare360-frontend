@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auction Officer Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <!-- Header -->
+    <div class="flex justify-between items-center bg-blue-700 p-4 shadow">
+        <div class="flex items-center space-x-3">
+            <!-- Icon -->
+            <div class="bg-yellow-500 p-2 rounded">
+                <i class="fa-solid fa-gavel text-white text-xl"></i>
+            </div>
+
+            <!-- Text -->
+            <div>
+                <div class="text-lg font-semibold text-white">
+                    <h2>Auction Management</h2>
+                </div>
+                <div class="text-sm text-white">Asset Disposal & Bidding Operations</div>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+            <div>
+                <div class="font-semibold text-white">Emma Thompson</div>
+                <div class="text-sm text-white">Auction Officer</div>
+            </div>
+
+            <button class="bg-red-500 text-white px-3 py-1 rounded"> <b>[&#x2192;</b> Logout</button>
+        </div>
+    </div>
+
+    <!-- Top Stats -->
+    <div class="grid grid-cols-4 gap-4 p-4">
+        <div class="card bg-white p-4 shadow rounded-lg flex items-center">
+            <i class="fas fa-gavel text-blue-600 mr-2"></i>
+            <div>
+                <div class="text-gray-500 text-sm">Active Auctions</div>
+                <div class="font-bold text-lg">3</div>
+            </div>
+        </div>
+
+        <div class="card bg-white p-4 shadow rounded-lg flex items-center">
+            <i class="fas fa-users text-green-600 mr-2"></i>
+            <div>
+                <div class="text-gray-500 text-sm">Registered Bidders</div>
+                <div class="font-bold text-lg">47</div>
+            </div>
+        </div>
+
+        <div class="card bg-white p-4 shadow rounded-lg flex items-center">
+            <i class="fas fa-dollar-sign text-yellow-600 mr-2"></i>
+            <div>
+                <div class="text-gray-500 text-sm">Total Bids</div>
+                <div class="font-bold text-lg">$125K</div>
+            </div>
+        </div>
+
+        <div class="card bg-white p-4 shadow rounded-lg flex items-center">
+            <i class="fas fa-clock text-purple-600 mr-2"></i>
+            <div>
+                <div class="text-gray-500 text-sm">Ending Soon</div>
+                <div class="font-bold text-lg">2</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="grid grid-cols-3 gap-4 p-4">
+        <!-- Active Auctions -->
+        <div class="col-span-2 bg-white p-4 shadow rounded">
+            <h2 class="text-lg font-semibold mb-2">Active Auctions</h2>
+            <p class="text-gray-500 mb-4">Monitor ongoing auctions and bidding activity</p>
+
+            <div class="space-y-4">
+                <!-- Auction Card 1 -->
+                <div class="card">
+                    <div class="auction-details">
+                        <div class="auction-title">Auction #AUC-2024-001</div>
+
+                        <div class="text-sm">Vehicle: Track LX-A-9876 (2019 Issue)</div>
+                        <div class="auction-meta">
+                            <span>Starting Bid: <span class="font-semibold">$18,000</span></span>
+                            <span>Registered Bidders: <span class="font-semibold">12</span></span>
+                        </div>
+                        <div class="auction-timer orange-timer">
+                            <i class="fas fa-clock mr-1"></i>Ends in: 2 hours 15 min
+                        </div>
+                    </div>
+                    <div class="bid-info">
+                        <div>
+                            <button class="end">
+                                Ending Soon
+                            </button>
+                            <div class="current-bid">$18,500</div>
+                            <div class="bid-label">Current Bid</div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-monitor">
+                                <i class="fas fa-eye mr-1"></i>Monitor
+                            </button>
+                            <button class="btn btn-bidders">
+                                <i class="fas fa-users mr-1"></i>Bidders
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Auction Card 2 -->
+                <div class="card">
+                    <div class="auction-details">
+                        <div class="auction-title">Auction #AUC-2024-002</div>
+                        <div class="text-sm">Vehicle: Event F1-005 (2018 Tryols)</div>
+                        <div class="auction-meta">
+                            <span>Starting Bid: <span class="font-semibold">$8,000</span></span>
+                            <span>Registered Bidders: <span class="font-semibold">8</span></span>
+                        </div>
+                        <div class="auction-timer orange-timer">
+                            <i class="fas fa-clock mr-1"></i>Ends in: 1 day 5 hours
+                        </div>
+                    </div>
+                    <div class="bid-info">
+                        <div>
+                            <button class="active">
+                                Active
+                            </button>
+                            <div class="current-bid">$9,200</div>
+                            <div class="bid-label">Current Bid</div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-monitor">
+                                <i class="fas fa-eye mr-1"></i>Monitor
+                            </button>
+                            <button class="btn btn-bidders">
+                                <i class="fas fa-users mr-1"></i>Bidders
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Auction Card 3 -->
+                <div class="card">
+                    <div class="auction-details">
+                        <div class="auction-title">Auction #AUC-2024-003</div>
+                        <div class="text-sm">Vehicle: V2L LX-B-486 (2020 Nissan)</div>
+                        <div class="auction-meta">
+                            <span>Starting Bid: <span class="font-semibold">$12,000</span></span>
+                            <span>Registered Bidders: <span class="font-semibold">15</span></span>
+                        </div>
+                        <div class="auction-timer blue-timer">
+                            <i class="fas fa-hourglass-start mr-1"></i>Starting in: 5 hours
+                        </div>
+                    </div>
+                    <div class="bid-info">
+                        <div>
+                            <button class="start">
+                                Starting Soon
+                            </button>
+                            <div class="current-bid">$18,000</div>
+                            <div class="bid-label">Reserve Price</div>
+                        </div>
+                        <div class="action-buttons">
+                            <button class="btn btn-pending" disabled>
+                                <i class="fas fa-eye-slash mr-1"></i>Pending
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Panel -->
+        <div class="space-y-4">
+            <!-- Quick Actions -->
+            <div class="space-y-4">
+                <div class="bg-white p-4 shadow rounded">
+                    <h3 class="font-semibold mb-2">Quick Actions</h3>
+                    <div class="quick-actions space-y-4">
+                        <button class="card2 ">
+                            <i class="fas fa-plus-circle mr-1"></i> Create New Auction
+                        </button>
+                        <button class="card2 ">
+                            <i class="fas fa-user-plus mr-1"></i> Register Bidder
+                        </button>
+                        <button class="card2">
+                            <i class="fas fa-clock mr-1"></i> Schedule Auction
+                        </button>
+                        <button class="card2">
+                            <i class="fas fa-chart-line mr-1"></i> Auction Reports
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bidder Management -->
+            <div class="bg-white p-4 shadow rounded space-y-2">
+                <h3 class="font-semibold mb-2">Bidder Management</h3>
+                <div class="flex justify-between">
+                    <span>Active Bidders:</span>
+                    <button class="btn">47 Total</button>
+                </div>
+                <div class="flex justify-between">
+                    <span>Pending Approval:</span>
+                    <button class="btn">5 New</button>
+                </div>
+                <div class="flex justify-between">
+                    <span>Verified Companies:</span>
+                    <button class="btn">32 Active</button>
+                </div>
+                <button class="mt-2 w-full bg-gray-300 py-1 rounded"><i class="fas fa-users mr-1"></i>Manage All
+                    Bidders</button>
+            </div>
+
+            <!-- Auction Schedule -->
+            <div class="bg-white p-4 shadow rounded">
+                <h3 class="font-semibold text-lg mb-4"><i class="fas fa-clock mr-1"></i>Auction Schedule</h3>
+                <div class="space-y-3">
+                    <div>
+                        <div class="font-bold">Today</div>
+                        <div class="text-gray-600 ml-2">2 auctions ending</div>
+                    </div>
+                    <div>
+                        <div class="font-bold">This Week</div>
+                        <div class="text-gray-600 ml-2">5 auctions scheduled</div>
+                    </div>
+                    <div>
+                        <div class="font-bold">Next Week</div>
+                        <div class="text-gray-600 ml-2">3 new auctions planned</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Assets Marked for Auction -->
+        <div class="col-span-3 bg-white p-4 shadow rounded">
+            <h2 class="text-lg font-semibold mb-1">Assets Marked for Auction</h2>
+            <p class="text-gray-600 mb-4">Vehicles and machinery ready for disposal</p>
+
+            <div class="space-y-4">
+                <!-- Truck -->
+                <div class="card grid grid-cols-3 gap-4 p-3 border-b">
+                    <div class="col-span-2">
+                        <h3 class="font-bold text-md">Truck LKC-7890</h3>
+                        <p class="text-sm">2017 Mistsubishi Canter - Mileage: 180,000 km</p>
+                        <p class="text-sm">Condition: Fair - Reason: High maintenance cost</p>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn btn-bidders">
+                            Set Reserve Price
+                        </button>
+                        <button class="btn btn-monitor">
+                            <i class="fas fa-clock mr-1"></i>Shedule Auction
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Excavator -->
+                <div class="card grid grid-cols-3 gap-4 p-3 border-b">
+                    <div class="col-span-2">
+                        <h3 class="font-bold text-md">Excavator EX-003</h3>
+                        <p class="text-sm">2016 Caterpillar315D - Hours: 8,500</p>
+                        <p class="text-sm">Condition: Good - Reason: Fleet downsizing</p>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn btn-bidders">
+                            Set Reserve Price
+                        </button>
+                        <button class="btn btn-monitor">
+                            <i class="fas fa-clock mr-1"></i>Shedule Auction
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Generator -->
+                <div class="card grid grid-cols-3 gap-4 p-3">
+                    <div class="col-span-2">
+                        <h3 class="font-bold text-md">Generator GEN-002</h3>
+                        <p class="text-sm">2015 Perkins 100kVA - Hours: 12,000</p>
+                        <p class="text-sm">Condition: Fair - Reason: Replacement purchased</p>
+                    </div>
+                    <div class="action-buttons">
+                        <button class="btn btn-bidders">
+                            Set Reserve Price
+                        </button>
+                        <button class="btn btn-monitor">
+                            <i class="fas fa-clock mr-1"></i>Shedule Auction
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
