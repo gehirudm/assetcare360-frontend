@@ -1,3 +1,7 @@
+import { getToday } from "../../../lib/utils";
+
+console.log(getToday);
+
 // Handle form submission with login API (employeeId, email, password)
 document.getElementById('loginForm').addEventListener('submit', async function (e) {
     e.preventDefault();

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
     --royal-blue-web-color: hsla(219, 89%, 53%, 1);
     --royal-blue-web-color-2: hsla(219, 75%, 50%, 1);
@@ -9,7 +11,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Work Sans", sans-serif;
     background: #f4f6f8;
     margin: 0;
     padding: 0;
